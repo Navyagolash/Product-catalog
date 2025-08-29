@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Product Catalog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white fixed top-0 left-0 right-0 shadow-md z-50 shadow-2xl ">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <!-- Brand -->
+            <a href="#" class="text-2xl font-bold">MyShop</a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#" class="hover:text-yellow-400 font-bold">Home</a></li>
+                <li><a href="#" class="hover:text-yellow-400 font-bold">Products</a></li>
+                <li><a href="#" id="cart-link" class="hover:text-yellow-400 font-bold">🛒 Cart (0)</a></li>
+            </ul>
+
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <ul class="flex flex-col space-y-2 p-4">
+                <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+                <li><a href="#" class="hover:text-yellow-400">Products</a></li>
+                <li><a href="#" id="cart-link-mobile" class="hover:text-yellow-400">🛒 Cart (0)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto pt-24 px-4">
+
+        <!-- Search Bar -->
+        <div class="flex justify-center mb-8">
+            <input type="text" id="search" placeholder="Search products..."
+                class="w-full md:w-1/2 px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-400">
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <!-- Cards inserted dynamically -->
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-1/2 relative">
+            <button id="modalClose"
+                class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+            <div class="w-full flex justify-center">
+                <img id="modal-img" src="" alt="" class="w-[50%] h-66 rounded mb-4">
+
+            </div>
+            <h2 id="modal-name" class="text-xl font-bold mb-2"></h2>
+            <p id="modal-price" class="text-green-600 font-semibold mb-2"></p>
+            <p id="modal-desc" class="text-gray-700"></p>
+        </div>
+    </div>
+
+    <!-- jQuery + Script -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

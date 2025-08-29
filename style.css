@@ -1,0 +1,13 @@
+/* Product card hover effect
+.product-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+} */
+
+/* Adjust spacing for navbar */
+/* body {
+  padding-top: 70px;
+} */
